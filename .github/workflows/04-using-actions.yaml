@@ -4,15 +4,20 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: 04-using-actions
         steps:
             - name: Checkout Code
               uses: actions/checkout@v7
 
             - name: Setup node
               uses: actions/setup-node@v4
-              with: 
-                node-version: 24.x
-                
+              with:
+                  node-version: 24.x
+
             - name: Install Dependencies
-              working-directory: 04-using-actions
               run: npm ci
+
+            - name: Run Unit Tests
+              run: npm run test
