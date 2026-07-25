@@ -7,5 +7,12 @@ jobs:
         steps:
             - name: Checkout Code
               uses: actions/checkout@v7
-            - name: Printing Folders
-              run: ls 04-using-actions
+
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with: 
+                node-version: 24.x
+                
+            - name: Install Dependencies
+              working-directory: 04-using-actions
+              run: npm ci
