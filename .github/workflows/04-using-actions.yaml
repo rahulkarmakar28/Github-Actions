@@ -6,6 +6,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
-              run: actions/checkout@v7
+              uses: actions/checkout@v7
             - name: Printing Folders
               run: ls 04-using-actions
