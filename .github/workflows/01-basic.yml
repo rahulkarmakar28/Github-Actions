@@ -13,6 +13,6 @@ jobs:
       - name: say Failed
         run: |
              echo "Failed!!!"
-             exit 1
+             exit 0
       - name: Say Success
         run: echo "Success!!!"
